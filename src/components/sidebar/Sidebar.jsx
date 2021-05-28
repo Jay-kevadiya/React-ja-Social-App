@@ -1,6 +1,9 @@
 import React from 'react'
 import './sidebar.css'
 import {RssFeed, Chat, PlayCircleFilled, Group, Bookmark, HelpOutline, WorkOutline,Event, School} from '@material-ui/icons';
+import {Users} from '../../dummyData';
+import CloseFriend from '../closeFriend/CloseFriend';
+
 
 export default function Sidebar() {
     return (
@@ -47,34 +50,9 @@ export default function Sidebar() {
                 <button className="sidebarButton">Show More</button>
                 <hr className="sidebarhr" />
                 <ul className="sideFriendList">
-                    <li className="sidebarFriend">
-                        <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName">Jay Kevadiya</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName">Jay Kevadiya</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName">Jay Kevadiya</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName">Jay Kevadiya</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName">Jay Kevadiya</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName">Jay Kevadiya</span>
-                    </li>
-                    <li className="sidebarFriend">
-                        <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName">Jay Kevadiya</span>
-                    </li>
+                   {Users.map(u => (
+                       <CloseFriend key={u.id} user={u} />
+                   ))}
                 </ul>
             </div>      
         </div>
